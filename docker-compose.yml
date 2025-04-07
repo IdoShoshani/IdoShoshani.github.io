@@ -1,0 +1,11 @@
+services:
+  resume-site:
+    build: .
+    ports:
+      - "8080:80" # Now access via http://localhost:8080
+    develop:
+      watch:
+        # Rebuild container when files change
+        - action: rebuild
+          path: .
+          target: /usr/share/nginx/html
